@@ -1,20 +1,15 @@
-int IN1 = 2;                        //Asignar pines de IN en las respectivas terminales del arduino.
-int IN2 = 3;
-int IN3 = 4;
-int IN4 = 5;
-
-int ENA = 6;                        //Asignar variable de velocidad de los motores. (En este código unicamente se activa la señal del motor (enable)
-int ENB = A1;  
+int IN1 = 10;                        //Asignar pines de IN en las respectivas terminales del arduino.
+int IN2 = 9;
+int IN3 = 8;
+int IN4 = 7;
 
 void setup() { 
   pinMode(IN1,OUTPUT);              //Configurar los pines del como salida para enviar la señal correspondiente al motor.
   pinMode(IN2,OUTPUT);
   pinMode(IN3,OUTPUT);
   pinMode(IN4,OUTPUT);
-  pinMode(ENA,OUTPUT);              //Configurar enable del motor A como salida.
 }
 void loop() {
-  digitalWrite(ENA,1);              //Enviar estado alto para activar el motor A.
   digitalWrite(IN1,1);              //Enviar estado alto para realizar un giro en el motor A.
   delay(1000);                      //Esperar 1 segundo en el giro anterior.
   digitalWrite(IN1,0);              //Detener movimiento del motor con un estado bajo.
